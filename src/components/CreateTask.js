@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-function CreateTask() {
+function CreateTask({todo, handleTodoInput, handleSubmit}) {
+
   return (
     <div>
         <div className='input--wrapper'>
-            <input type="text" placeholder='Enter Your Task For Today' />
-            <button>Submit</button>
+            <input type="text" value={todo} onChange={handleTodoInput} placeholder='Enter Your Task For Today' />
+            <button onClick={handleSubmit}>Submit</button>
         </div>
     </div>
   )
 }
 
-export default CreateTask
+export default CreateTask;

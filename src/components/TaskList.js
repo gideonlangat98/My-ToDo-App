@@ -6,11 +6,14 @@ function TaskList({tasks}) {
   return (
     <div>
         <div className='tasklist--wrapper'>
-           { tasks.map((task, index) => {
-            return (
+           { tasks && tasks.length > 0 ? tasks.map((task, index) => (
                 <div key={index}>{task.title}</div>
-            )
-           }) }
+            )) :
+            <>
+            <div>
+              No Tasks present
+            </div>
+            </> }
         </div>
     </div>
   )
